@@ -9,7 +9,7 @@ A simple **data pipeline** that fetches monster data from the D&D 5e API using A
 Create an **orchestrated data pipeline** that:
 
 1. Fetches **ALL monster data** from the [DnD API](https://www.dnd5eapi.co/api/2014/) (334 monsters available)
-2. Selects 5 **truly random monsters** from the entire dataset (examples may include):
+2. Selects 5 **random monsters** from the entire dataset (examples may include):
    - **Goblin**
    - **Skeleton** 
    - **Barbed Devil**
@@ -22,8 +22,6 @@ Create an **orchestrated data pipeline** that:
    - `armor_class`
    - `actions` (only the name and description of each)
 4. Outputs the final data as a structured JSON file
-
-**Note**: Since the D&D 5e API doesn't support server-side pagination, we fetch all monsters but immediately limit processing to the first 20 to respect the challenge requirement: *"Limit fetched results via API filters or pagination"*.
 
 ---
 
