@@ -76,9 +76,9 @@ python3 main.py
 
 **Pipeline Architecture:**
 The DAG consists of 4 individual tasks:
-1. **fetch_monsters**: Fetches first 20 monsters from D&D API
-2. **select_random_monsters**: Selects 5 random monsters
-3. **fetch_monster_details**: Gets detailed data for each monster
+1. **fetch_monsters**: Fetches ALL monsters from D&D API (334 available)
+2. **select_random_monsters**: Selects 5 random monsters from the entire dataset
+3. **fetch_monster_details**: Gets detailed data for each selected monster
 4. **save_monsters**: Saves final JSON output
 
 **Note**: The setup script automatically creates the admin user with credentials `admin/admin`. If you encounter any login issues, use `./reset_airflow.sh` followed by `./setup_airflow.sh` to start completely fresh.

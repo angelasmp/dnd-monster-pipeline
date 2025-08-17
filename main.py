@@ -43,8 +43,8 @@ def main():
         return 0
     
     try:
-        # Step 1: Fetch ALL monsters using task function (no limit for true randomness)
-        monsters_data = fetch_monsters_task()  # Remove limit=20 to fetch all monsters
+        # Step 1: Fetch ALL monsters using task function 
+        monsters_data = fetch_monsters_task()  
         
         # Step 2: Select random monsters using task function
         class MockTI:
