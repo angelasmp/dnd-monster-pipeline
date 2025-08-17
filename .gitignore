@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+*.egg
+MANIFEST
+
+# Airflow
+airflow/
+logs/
+airflow.cfg
+airflow.db
+webserver_config.py
+airflow_home/logs/scheduler/latest/native_dags/
+airflow_home/standalone_admin_password.txt
+airflow-webserver.pid
+airflow_scheduler.log
+airflow_webserver.log
+
+# Output files
+monsters.json
+*.parquet
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Docker
+.dockerignore

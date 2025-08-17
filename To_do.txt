@@ -1,0 +1,135 @@
+# 🐉 Dungeons & Data: Monster Pipeline Challenge
+
+Welcome, adventurer! Your quest is to build a **data pipeline** that fetches and cleans monster data from the Open5e Dungeons & Dragons API. Your mission is focused, but the tools of a skilled data engineer are required: API handling, orchestration, Docker, and reproducibility.
+
+---
+
+## 🎯 Challenge Summary
+
+Create an **orchestrated data pipeline** that:
+
+1. Fetches monster data from the [DnD API](https://www.dnd5eapi.co/api/2014/)
+2. Selects 5 random monsters (for example):
+   - **Goblin**
+   - **Skeleton**
+   - **Barbed Devil**
+   - **Dretch**
+   - **Warhorse**
+3. Extracts only the following fields using `url` attribute to fetch details :
+   - `name`
+   - `hit_points`
+   - `armor_class`
+   - `actions` (only the name and description of each)
+4. Outputs the final data as a structured JSON file
+
+You should use a **data pipeline orchestration tool** (e.g., Prefect, Airflow, Dagster, etc.) and package the project using **Docker**.
+
+---
+
+## 📦 Deliverables
+
+- `src` or equivalent — pipeline code with tasks
+- `main.py` or `run_pipeline.sh` — entrypoint to trigger pipeline execution
+- `.json` or `.parquet` — output file containing selected monsters
+- `Dockerfile` — container to run the full pipeline
+- `README.md` — (this file)
+
+---
+
+## 📆 Tech Requirements
+
+- Any orchestration tool (We are using Mage.AI, but you can choose)
+- Python
+- Docker
+- Basic validation logic using Pydantic or simple schema checks
+
+---
+
+## 🚀 Setup Instructions
+
+Consider create a setup instructions in your repo. Thise is a example, but feel free to add more details about your project. 
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/dnd-monster-pipeline.git
+cd dnd-monster-pipeline
+```
+
+---
+
+### 2. Build the Docker Image
+
+```bash
+docker build -t dnd-monster-pipeline .
+```
+
+---
+
+### 3. Run the Pipeline
+
+```bash
+docker run --rm -v "$(pwd):/app" dnd-monster-pipeline
+```
+
+---
+
+## 📂 Example Output (`monsters.json`)
+
+```json
+[
+  {
+    "name": "Goblin",
+    "hit_points": 15,
+    "armor_class": 12,
+    "actions": [
+      {
+        "name": "Scimitar",
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage."
+      }
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "hit_points": 13,
+    "armor_class": 13,
+    "actions": [
+      {
+        "name": "Shortsword",
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage."
+      }
+    ]
+  }
+  ...
+]
+```
+
+---
+
+## ✅ Evaluation Criteria
+
+- ✅ Correct use of orchestration
+- ✅ Functional Docker image
+- ✅ Clean and readable output
+- ✅ Simple, well-documented code
+- ✅ Ease of execution (via script or entrypoint)
+
+---
+
+## 🧠 Tips
+
+- Limit fetched results via API filters or pagination
+- Make pipeline idempotent (don’t re-fetch if file exists)
+- Keep things simple — clarity and reproducibility are key!
+
+---
+
+## 🪄 Bonus (Optional)
+
+- Add CLI arguments for monster selection
+- Cache API response locally
+- ✅ Add unit tests for task components
+
+---
+
+Good luck — may your data flows be smooth and your goblins tame!
